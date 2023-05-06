@@ -1,9 +1,10 @@
-import 'sweetalert2'
+import swal from 'sweetalert'
 
 export function useFlash() {
-  function flash(message) {
-    return Swal.fire(message)
-  }
-}
 
-return { flash }
+  function flash(message) {
+    return swal(message)
+  }
+
+  return { flash }
+}

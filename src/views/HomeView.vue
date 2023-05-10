@@ -2,21 +2,20 @@
 import TheWelcome from '../components/TheWelcome.vue'
 import { ref } from 'vue'
 import { useFlash } from '@/composables/useFlash'
+import { useStorage } from '@/composables/useStorage'
 
-const message = ref("Hello World")
+    const { flash } = useFlash()
 
-  setTimeout(() => {
-    message.value = "Hello universe"
-  }, 2000)
-
-  const { flash } = useFlash()
+    const food = useStorage('food')
 </script>
 
 <template>
   <main>
         <button @click="flash('Morbin time')">Lets Morb</button>
-<!--    <TheWelcome />-->
-<!--    {{ message }}-->
-<!--    <input type="text" v-model="message">-->
+
+        <p>
+            What is your favorite food?
+        </p>
+      <input type="text" v-model="food">
   </main>
 </template>
